@@ -2,12 +2,11 @@ package br.com.sqlite;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -83,8 +82,5 @@ public class PrincipalActivity extends AppCompatActivity {
         adapter.setRecyclerOnClickListener(clickListener);
         adapter.setDeleteOnClickListener(clickDeleteListener);
         lista.setAdapter(adapter);
-
-
-
     }
 }

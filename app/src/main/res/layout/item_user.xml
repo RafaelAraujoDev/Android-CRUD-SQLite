@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#f4f4f4"
-    android:padding="0dp">
-
-    <ImageView
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:layout_weight="2"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher"
-        android:layout_gravity="center"
-        android:background="@android:color/white"/>
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_weight="7"
-        android:orientation="vertical"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:background="@android:color/white">
+        android:background="#f4f4f4"
+        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:adjustViewBounds="true"
+            android:background="@android:color/white"
+            android:scaleType="centerInside"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Usuario"
-            android:textStyle="bold"
-            android:textColor="#666666"
-            android:textSize="20sp"/>
+            android:layout_weight="7"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="5dp">
 
-        <TextView
-            android:id="@+id/txtUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="teste@teste" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario"
+                android:textColor="#666666"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Senha"
-            android:textStyle="bold"
-            android:textColor="#666666"/>
+            <TextView
+                android:id="@+id/txtUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="teste@teste" />
 
-        <TextView
-            android:id="@+id/txtSenha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="123" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Senha"
+                android:textColor="#666666"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/txtSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="123" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.76"
+            android:adjustViewBounds="true"
+            android:background="#fff"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_delete_black_24dp" />
     </LinearLayout>
 
-    <ImageButton
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:id="@+id/btnDelete"
-        android:background="#fff"
-        android:layout_weight="1.76"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:srcCompat="@android:drawable/ic_menu_delete"
-        android:layout_gravity="center"/>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

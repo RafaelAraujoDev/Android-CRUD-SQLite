@@ -1,15 +1,15 @@
 package br.com.sqlite;
 
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-
-import android.support.v7.app.AlertDialog;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -38,6 +38,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
                 email_usuario = edtEmailLogin.getText().toString().trim();
                 senha_usuairo = edtSenhaLogin.getText().toString().trim();
 
@@ -59,8 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(it);
                         finish();
                     }else{
-                        dialogBox();
-                        //Toast.makeText(getBaseContext(), "Usuario ou senha invalido!", Toast.LENGTH_SHORT).show();
+                        Snackbar.make(btnEntrar, "Usuario ou senha invalido!", Snackbar.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -82,37 +84,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Uri uri = Uri.parse("http://google.com/");
+                Uri uri = Uri.parse("https://github.com/RafaelAraujoDev/Android-CRUD-SQLite");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
         });
-    }
-
-    public void dialogBox() {
-        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setMessage("Usuario ou senha invalido!");
-        alertDialogBuilder.setCancelable(false);
-        alertDialogBuilder.setPositiveButton("Ok",
-                new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        arg0.cancel();
-                    }
-                });
-
-        /*alertDialogBuilder.setNegativeButton("cancel",
-                new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface arg0, int arg1) {
-
-                    }
-                });*/
-
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
     }
 
     @Override
